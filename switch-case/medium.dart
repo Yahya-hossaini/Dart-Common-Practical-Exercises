@@ -1,10 +1,6 @@
 import 'dart:io';
 import 'dart:math';
 
-void main(){
-  rockPaperScissorGame();
-}
-
 //----------------------------------------------------------------------------------------------------
 //Rock, Paper, Scissors Game
 void rockPaperScissorGame(){
