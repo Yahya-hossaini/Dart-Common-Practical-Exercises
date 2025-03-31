@@ -1,21 +1,21 @@
 //----------------------------------------------------------------------------------------------------
 //Find Unique Elements in an Array
-List<int> findUnique(List<int> arr) {
-  // Step 1: Count occurrences of each element using a Map
-  Map<int, int> counts = {};
-  for (int num in arr) {
-    counts[num] = (counts[num] ?? 0) + 1; // Increment count, or initialize to 1
-  }
+List<int> findUnique(List<int> array){
+  if(array.isEmpty) return [];
 
-  // Step 2: Filter elements that occur only once
-  List<int> uniqueElements = [];
-  for (int num in counts.keys) {
-    if (counts[num] == 1) {
-      uniqueElements.add(num);
+  array.sort();
+
+  List<int> Unique = [];
+  for(int i = 0; i < array.length; i++){
+
+    bool isUnique = (i == 0 || array[i] != array[i - 1]) && 
+                    (i == array.length -1 || array[i] != array[i + 1]);
+
+    if(isUnique){
+      Unique.add(array[i]);
     }
   }
-
-  return uniqueElements;
+  return Unique;
 }
 //----------------------------------------------------------------------------------------------------
 //Sorting an Array Using Bubble Sort
